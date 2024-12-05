@@ -24,6 +24,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.sp
 import coil.compose.rememberAsyncImagePainter
 import coil.request.ImageRequest
+import com.practice.movies_app.R
 import com.practice.movies_app.data.model.Movie
 
 @Composable
@@ -57,8 +58,8 @@ fun MovieDetailScreen(movie: Movie, onBackPressed: () -> Unit) {
                 ImageRequest.Builder(LocalContext.current)
                     .data("https://image.tmdb.org/t/p/original${movie.poster_path}")
                     .apply {
-                        placeholder(drawableResId = androidx.core.R.drawable.ic_call_answer_video_low)  //placeholder image resource
-                        error(androidx.core.R.drawable.ic_call_answer_video_low) //placeholder in case of error
+                        placeholder(drawableResId = R.drawable.default_placeholder)  //placeholder image resource
+                        error(R.drawable.default_placeholder) //placeholder in case of error
                     }
                     .build()
             ),
